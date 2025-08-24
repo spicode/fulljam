@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="fulljam"
-run/main_scene="res://timer.tscn"
+run/main_scene="uid://cbvoxqmnvpgxx"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
 
 Global="*res://global.gd"
+
+[display]
+
+mouse_cursor/custom_image="uid://cii138qa4vn0m"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

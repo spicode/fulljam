@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbvoxqmnvpgxx"]
+[gd_scene load_steps=7 format=3 uid="uid://cbvoxqmnvpgxx"]
 
 [ext_resource type="Script" uid="uid://clx43j302b40g" path="res://setcard.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://7fglu7e8utkl" path="res://cheese_backgrund.jpg" id="2_1bvp3"]
 [ext_resource type="Script" uid="uid://jbaoyatn2rks" path="res://draganddrop.gd" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://dhmt15tegl00k" path="res://ze_biscuit.png" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cflc0d3q2v1u3" path="res://player.tscn" id="3_lquwl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
+line_spacing = 2.99
+font_size = 33
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_h2yge")
@@ -14,69 +19,79 @@ scale = Vector2(3.87667, 3.70677)
 texture = ExtResource("2_1bvp3")
 
 [node name="card1" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(158, 438)
-scale = Vector2(0.347734, 1.37674)
-texture = ExtResource("2_1bvp3")
+position = Vector2(158.433, 437.535)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("3_7mycd")
 script = ExtResource("3_1bvp3")
 
 [node name="Label" type="Label" parent="card1"]
-offset_left = -140.912
-offset_top = -100.963
-offset_right = -100.912
-offset_bottom = -77.9628
-scale = Vector2(4.937, 0.695)
+texture_filter = 2
+offset_left = -18.51
+offset_top = -20.09
+offset_right = 18.49
+offset_bottom = 19.92
+scale = Vector2(0.23, 0.23)
+label_settings = SubResource("LabelSettings_lquwl")
 
 [node name="card2" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(673, 438)
-scale = Vector2(0.347734, 1.37674)
-texture = ExtResource("2_1bvp3")
+position = Vector2(673.433, 437.535)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("3_7mycd")
 script = ExtResource("3_1bvp3")
 
 [node name="Label" type="Label" parent="card2"]
-offset_left = -140.912
-offset_top = -100.963
-offset_right = -100.912
-offset_bottom = -77.9628
-scale = Vector2(4.937, 0.695)
+texture_filter = 2
+offset_left = -18.51
+offset_top = -20.09
+offset_right = 18.49
+offset_bottom = 19.92
+scale = Vector2(0.23, 0.23)
+label_settings = SubResource("LabelSettings_lquwl")
 
 [node name="card3" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(473, 432)
-scale = Vector2(0.347734, 1.37674)
-texture = ExtResource("2_1bvp3")
+position = Vector2(502.593, 442.181)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("3_7mycd")
 script = ExtResource("3_1bvp3")
 
 [node name="Label" type="Label" parent="card3"]
-offset_left = -140.912
-offset_top = -100.963
-offset_right = -100.912
-offset_bottom = -77.9628
-scale = Vector2(4.937, 0.695)
+texture_filter = 2
+offset_left = -18.51
+offset_top = -20.09
+offset_right = 18.49
+offset_bottom = 19.92
+scale = Vector2(0.23, 0.23)
+label_settings = SubResource("LabelSettings_lquwl")
 
 [node name="card4" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(315, 440)
-scale = Vector2(0.347734, 1.37674)
-texture = ExtResource("2_1bvp3")
+position = Vector2(344.593, 450.181)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("3_7mycd")
 script = ExtResource("3_1bvp3")
 
 [node name="Label" type="Label" parent="card4"]
-offset_left = -140.912
-offset_top = -100.963
-offset_right = -100.912
-offset_bottom = -77.9628
-scale = Vector2(4.937, 0.695)
+texture_filter = 2
+offset_left = -18.51
+offset_top = -20.09
+offset_right = 18.49
+offset_bottom = 19.92
+scale = Vector2(0.23, 0.23)
+label_settings = SubResource("LabelSettings_lquwl")
 
 [node name="card5" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(842, 431)
-scale = Vector2(0.347734, 1.37674)
-texture = ExtResource("2_1bvp3")
+position = Vector2(871.593, 441.181)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("3_7mycd")
 script = ExtResource("3_1bvp3")
 
 [node name="Label" type="Label" parent="card5"]
-offset_left = -140.912
-offset_top = -100.963
-offset_right = -100.912
-offset_bottom = -77.9628
-scale = Vector2(4.937, 0.695)
+texture_filter = 2
+offset_left = -18.51
+offset_top = -20.09
+offset_right = 18.49
+offset_bottom = 19.92
+scale = Vector2(0.23, 0.23)
+label_settings = SubResource("LabelSettings_lquwl")
 
 [node name="player" parent="." instance=ExtResource("3_lquwl")]
 position = Vector2(339.099, 476.724)
