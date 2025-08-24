@@ -9,10 +9,5 @@ extends Node2D
 func _process(delta: float) -> void:
 	var index = 0
 	for card in player.player_cards:
-		
-		print(player.player_cards[card])
-		#cardLables[player.player_cards[card]].text = str(card[0]," ", card)
-		
-func _ready() -> void:
-	for card in player.player_cards:
-		print(card[0],card[1])
+		cardLables[index].text = str(card[0]," ", card[1],"\ntime left: ",int(card[2]))
+		index+=1
