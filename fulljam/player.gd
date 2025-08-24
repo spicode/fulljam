@@ -24,7 +24,7 @@ func _ready():
 	print("enemy cards:")
 	for i in range(5):
 		var decay = 30
-		var card = [card_col.pick_random(), card_val.pick_random(), randi_range(30,60)]
+		var card = [card_col.pick_random(), card_val.pick_random(), randi_range(30,50)]
 		enemy_cards.append(card)
 		print(card)
 	var result = PokerHand.evaluate_hand(player_cards)
@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 	var to_remove = []
 	for card in player_cards:
 		card[2] -= delta
-		#print("Card timer:", card[2])  # See itcounting down
+		#print("Card timer:", card[2]) 
 		if card[2] <= 0:
 			to_remove.append(card)
 			print("Card expired:", card)
@@ -43,3 +43,8 @@ func _process(delta: float) -> void:
 	for card in to_remove:
 		player_cards.erase(card)
 		print("Removed card. Remaining cards:", player_cards)
+		card=[card_col.pick_random(), card_val.pick_random(), randi_range(30,50)]
+		player_cards.append(card)
+		
+		
+		
