@@ -41,10 +41,8 @@ func _process(delta: float) -> void:
 			print("Card expired:", card)
 	
 	for card in to_remove:
-		player_cards.erase(card)
-		print("Removed card. Remaining cards:", player_cards)
-		card=[card_col.pick_random(), card_val.pick_random(), randi_range(30,50)]
-		player_cards.append(card)
+		
+		player_cards[player_cards.find(card)]=[card_col.pick_random(), card_val.pick_random(), randi_range(30,50)]
 		
 		
 		
