@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbvoxqmnvpgxx"]
+[gd_scene load_steps=5 format=3 uid="uid://cbvoxqmnvpgxx"]
 
 [ext_resource type="Script" uid="uid://clx43j302b40g" path="res://setcard.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://7fglu7e8utkl" path="res://cheese_backgrund.jpg" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://jbaoyatn2rks" path="res://draganddrop.gd" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://cflc0d3q2v1u3" path="res://player.tscn" id="3_lquwl"]
 
 [node name="Node2D" type="Node2D"]
@@ -16,6 +17,7 @@ texture = ExtResource("2_1bvp3")
 position = Vector2(158, 438)
 scale = Vector2(0.347734, 1.37674)
 texture = ExtResource("2_1bvp3")
+script = ExtResource("3_1bvp3")
 
 [node name="Label" type="Label" parent="card1"]
 offset_left = -140.912
