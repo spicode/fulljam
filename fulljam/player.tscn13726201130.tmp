@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cflc0d3q2v1u3"]
+
+[ext_resource type="Script" uid="uid://b0qpfa2dlfflm" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="PackedScene" path="res://timer.tscn" id="2_onrkg"]
+
+[node name="player" type="Node2D"]
+script = ExtResource("1_4flbx")
+
+[node name="timer" parent="." instance=ExtResource("2_onrkg")]

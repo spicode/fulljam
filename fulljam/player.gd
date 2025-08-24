@@ -7,14 +7,16 @@ var val_rank={
 	"6": 6, "7": 7, "8": 8, "9": 9,
 	"10": 10, "J": 11, "Q": 12, "K": 13, "Ace": 14
 }
+var player_cards = []
+var enemy_cards = []
 func _ready():
-	var player_cards = []
-	var enemy_cards = []
+	player_cards = []
+	enemy_cards = []
 
 	print("player cards:")
 	for i in range(5):
 		var decay = 30
-		var card = [card_col.pick_random(), card_val.pick_random(), decay]
+		var card = [card_col.pick_random(), card_val.pick_random(), randi_range(30,60)]
 		player_cards.append(card)
 		print(card)
 		
@@ -22,12 +24,22 @@ func _ready():
 	print("enemy cards:")
 	for i in range(5):
 		var decay = 30
-		var card = [card_col.pick_random(), card_val.pick_random(), decay]
+		var card = [card_col.pick_random(), card_val.pick_random(), randi_range(30,60)]
 		enemy_cards.append(card)
 		print(card)
 	var result = PokerHand.evaluate_hand(player_cards)
 	var bad_result = PokerHand.evaluate_hand(enemy_cards)
 	print("You(player) got a ", result)
 	print("ze bad(enemy) got a ",bad_result)
-		
-   
+func _process(delta: float) -> void:
+	var to_remove = []
+	for card in player_cards:
+		card[2] -= delta
+		#print("Card timer:", card[2])  # See itcounting down
+		if card[2] <= 0:
+			to_remove.append(card)
+			print("Card expired:", card)
+	
+	for card in to_remove:
+		player_cards.erase(card)
+		print("Removed card. Remaining cards:", player_cards)
