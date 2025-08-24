@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5a83jf2qkn68"]
+[gd_scene load_steps=2 format=3 uid="uid://npven7385tok"]
 
 [ext_resource type="Script" uid="uid://d178jdvhhpyhf" path="res://node_2d.gd" id="1_qdhxh"]
 
-[node name="Node2D" type="Node2D"]
+[node name="timer" type="Node2D"]
 script = ExtResource("1_qdhxh")
 
 [node name="timer" type="Label" parent="."]
