@@ -30,6 +30,7 @@ scale = Vector2(4.937, 0.695)
 position = Vector2(673, 438)
 scale = Vector2(0.347734, 1.37674)
 texture = ExtResource("2_1bvp3")
+script = ExtResource("3_1bvp3")
 
 [node name="Label" type="Label" parent="card2"]
 offset_left = -140.912
@@ -42,6 +43,7 @@ scale = Vector2(4.937, 0.695)
 position = Vector2(473, 432)
 scale = Vector2(0.347734, 1.37674)
 texture = ExtResource("2_1bvp3")
+script = ExtResource("3_1bvp3")
 
 [node name="Label" type="Label" parent="card3"]
 offset_left = -140.912
@@ -54,6 +56,7 @@ scale = Vector2(4.937, 0.695)
 position = Vector2(315, 440)
 scale = Vector2(0.347734, 1.37674)
 texture = ExtResource("2_1bvp3")
+script = ExtResource("3_1bvp3")
 
 [node name="Label" type="Label" parent="card4"]
 offset_left = -140.912
@@ -66,6 +69,7 @@ scale = Vector2(4.937, 0.695)
 position = Vector2(842, 431)
 scale = Vector2(0.347734, 1.37674)
 texture = ExtResource("2_1bvp3")
+script = ExtResource("3_1bvp3")
 
 [node name="Label" type="Label" parent="card5"]
 offset_left = -140.912
