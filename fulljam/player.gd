@@ -2,11 +2,14 @@ extends Node2D
 var PokerHand = preload("res://poker_hands(Im_in_pain).gd").new()
 var card_col = ["heart","spade","diamond","clubs"]
 var card_val = ["1","2","3","4","5","6","7","8","9","J","Q","K","Ace"]
+
 var val_rank={
 	"2": 2, "3": 3, "4": 4, "5": 5,
 	"6": 6, "7": 7, "8": 8, "9": 9,
 	"10": 10, "J": 11, "Q": 12, "K": 13, "Ace": 14
 }
+var goot_points=0
+var bad_points=0
 var player_cards = []
 var enemy_cards = []
 func _ready():
@@ -31,6 +34,12 @@ func _ready():
 	var bad_result = PokerHand.evaluate_hand(enemy_cards)
 	print("You(player) got a ", result)
 	print("ze bad(enemy) got a ",bad_result)
+	if result.points > bad_result.points:
+		print("You win!")
+	elif result.points < bad_result.points:
+		print("Enemy wins!")
+	else:
+		print("Tie!")
 func _process(delta: float) -> void:
 	var to_remove = []
 	for card in player_cards:
@@ -43,6 +52,7 @@ func _process(delta: float) -> void:
 	for card in to_remove:
 		
 		player_cards[player_cards.find(card)]=[card_col.pick_random(), card_val.pick_random(), randi_range(30,50)]
-		
+		var result = PokerHand.evaluate_hand(player_cards)
+		print(result)
 		
 		
