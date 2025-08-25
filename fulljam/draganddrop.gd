@@ -21,9 +21,13 @@ func _physics_process(delta):
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT:
+		if Global.discard <= 0:
+			return
 		if event.pressed:
 			if get_rect().has_point(to_local(event.position)):
 				discard.emit(card)
+				Global.discard -=1
+				print(Global.discard)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			if get_rect().has_point(to_local(event.position)):

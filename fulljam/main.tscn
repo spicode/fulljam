@@ -19,7 +19,7 @@ scale = Vector2(3.87667, 3.70677)
 texture = ExtResource("2_1bvp3")
 
 [node name="card1" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(176, 451)
+position = Vector2(176, 450)
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("3_7mycd")
 script = ExtResource("3_1bvp3")
@@ -34,7 +34,7 @@ scale = Vector2(0.23, 0.23)
 label_settings = SubResource("LabelSettings_lquwl")
 
 [node name="card2" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(679, 450)
+position = Vector2(695.695, 450)
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("3_7mycd")
 script = ExtResource("3_1bvp3")
@@ -49,7 +49,7 @@ scale = Vector2(0.23, 0.23)
 label_settings = SubResource("LabelSettings_lquwl")
 
 [node name="card3" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(509, 454)
+position = Vector2(509, 450)
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("3_7mycd")
 script = ExtResource("3_1bvp3")
@@ -64,7 +64,7 @@ scale = Vector2(0.23, 0.23)
 label_settings = SubResource("LabelSettings_lquwl")
 
 [node name="card4" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(344.593, 450.181)
+position = Vector2(344.593, 450)
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("3_7mycd")
 script = ExtResource("3_1bvp3")
@@ -79,7 +79,7 @@ scale = Vector2(0.23, 0.23)
 label_settings = SubResource("LabelSettings_lquwl")
 
 [node name="card5" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(880, 461)
+position = Vector2(880, 450)
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("3_7mycd")
 script = ExtResource("3_1bvp3")
