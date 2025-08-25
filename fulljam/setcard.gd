@@ -4,8 +4,8 @@ extends Node2D
 @onready var card_2: Sprite2D = $card2
 @onready var card_4: Sprite2D = $card4
 @onready var card_5: Sprite2D = $card5
-@onready var cards = [$card1, $card2, $card3, $card4, $card5]
-@onready var cardLables = [$card1/Label, $card2/Label, $card3/Label, $card4/Label, $card5/Label]
+@onready var cards = [$card1, $card2, $card3, $card4, $card5,$card6, $card7, $card8, $card9, $card10, $card11, $card12]
+@onready var cardLables = [$card1/Label, $card2/Label, $card3/Label, $card4/Label, $card5/Label,$card6/Label,$card7/Label, $card8/Label, $card9/Label, $card10/Label, $card11/Label, $card12/Label]
 func _process(delta: float) -> void:
 	var index = 0
 	for card in player.player_cards:

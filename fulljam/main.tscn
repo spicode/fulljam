@@ -14,8 +14,8 @@ font_size = 33
 script = ExtResource("1_h2yge")
 
 [node name="CheeseBackgrund" type="Sprite2D" parent="."]
-position = Vector2(581.5, 311.631)
-scale = Vector2(3.87667, 3.70677)
+position = Vector2(966, 539.131)
+scale = Vector2(6.44, 6.4151)
 texture = ExtResource("2_1bvp3")
 
 [node name="card1" type="Sprite2D" parent="." groups=["playerCards"]]
@@ -79,12 +79,57 @@ scale = Vector2(0.23, 0.23)
 label_settings = SubResource("LabelSettings_lquwl")
 
 [node name="card5" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(880, 450)
+position = Vector2(870, 437)
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("3_7mycd")
 script = ExtResource("3_1bvp3")
 
 [node name="Label" type="Label" parent="card5"]
+texture_filter = 2
+offset_left = -18.51
+offset_top = -20.09
+offset_right = 18.49
+offset_bottom = 19.92
+scale = Vector2(0.23, 0.23)
+label_settings = SubResource("LabelSettings_lquwl")
+
+[node name="card6" type="Sprite2D" parent="." groups=["playerCards"]]
+position = Vector2(176.25, 234)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("3_7mycd")
+script = ExtResource("3_1bvp3")
+
+[node name="Label" type="Label" parent="card6"]
+texture_filter = 2
+offset_left = -18.51
+offset_top = -20.09
+offset_right = 18.49
+offset_bottom = 19.92
+scale = Vector2(0.23, 0.23)
+label_settings = SubResource("LabelSettings_lquwl")
+
+[node name="card7" type="Sprite2D" parent="." groups=["playerCards"]]
+position = Vector2(719, 232)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("3_7mycd")
+script = ExtResource("3_1bvp3")
+
+[node name="Label" type="Label" parent="card7"]
+texture_filter = 2
+offset_left = -18.51
+offset_top = -20.09
+offset_right = 18.49
+offset_bottom = 19.92
+scale = Vector2(0.23, 0.23)
+label_settings = SubResource("LabelSettings_lquwl")
+
+[node name="card8" type="Sprite2D" parent="." groups=["playerCards"]]
+position = Vector2(492, 228)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("3_7mycd")
+script = ExtResource("3_1bvp3")
+
+[node name="Label" type="Label" parent="card8"]
 texture_filter = 2
 offset_left = -18.51
 offset_top = -20.09
@@ -105,3 +150,6 @@ offset_bottom = 23.0
 [connection signal="discard" from="card3" to="." method="_on_card_discard"]
 [connection signal="discard" from="card4" to="." method="_on_card_discard"]
 [connection signal="discard" from="card5" to="." method="_on_card_discard"]
+[connection signal="discard" from="card6" to="." method="_on_card_discard"]
+[connection signal="discard" from="card7" to="." method="_on_card_discard"]
+[connection signal="discard" from="card8" to="." method="_on_card_discard"]

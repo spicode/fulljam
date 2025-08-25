@@ -18,7 +18,7 @@ func _ready():
 	enemy_cards = []
 
 	print("player cards:")
-	for i in range(5):
+	for i in range(8):
 		var decay = 30
 		var card = [card_col.pick_random(), card_val.pick_random(), randi_range(30,60)]
 		player_cards.append(card)
@@ -26,7 +26,7 @@ func _ready():
 		
 	
 	print("enemy cards:")
-	for i in range(5):
+	for i in range(8):
 		var decay = 30
 		var card = [card_col.pick_random(), card_val.pick_random(), randi_range(30,50)]
 		enemy_cards.append(card)
