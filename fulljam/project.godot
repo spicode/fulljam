@@ -20,6 +20,7 @@ Global="*res://global.gd"
 
 [display]
 
+window/size/viewport_width=1920
 mouse_cursor/custom_image="uid://cii138qa4vn0m"
 
 [rendering]

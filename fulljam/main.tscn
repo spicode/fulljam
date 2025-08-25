@@ -19,7 +19,7 @@ scale = Vector2(3.87667, 3.70677)
 texture = ExtResource("2_1bvp3")
 
 [node name="card1" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(158.433, 437.535)
+position = Vector2(176, 451)
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("3_7mycd")
 script = ExtResource("3_1bvp3")
@@ -34,7 +34,7 @@ scale = Vector2(0.23, 0.23)
 label_settings = SubResource("LabelSettings_lquwl")
 
 [node name="card2" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(673.433, 437.535)
+position = Vector2(679, 450)
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("3_7mycd")
 script = ExtResource("3_1bvp3")
@@ -49,7 +49,7 @@ scale = Vector2(0.23, 0.23)
 label_settings = SubResource("LabelSettings_lquwl")
 
 [node name="card3" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(502.593, 442.181)
+position = Vector2(509, 454)
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("3_7mycd")
 script = ExtResource("3_1bvp3")
@@ -79,7 +79,7 @@ scale = Vector2(0.23, 0.23)
 label_settings = SubResource("LabelSettings_lquwl")
 
 [node name="card5" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(871.593, 441.181)
+position = Vector2(880, 461)
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("3_7mycd")
 script = ExtResource("3_1bvp3")
@@ -99,3 +99,9 @@ position = Vector2(339.099, 476.724)
 [node name="winner" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[connection signal="discard" from="card1" to="." method="_on_card_discard"]
+[connection signal="discard" from="card2" to="." method="_on_card_discard"]
+[connection signal="discard" from="card3" to="." method="_on_card_discard"]
+[connection signal="discard" from="card4" to="." method="_on_card_discard"]
+[connection signal="discard" from="card5" to="." method="_on_card_discard"]
