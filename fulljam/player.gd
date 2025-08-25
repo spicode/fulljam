@@ -2,7 +2,7 @@ extends Node2D
 var PokerHand = preload("res://poker_hands(Im_in_pain).gd").new()
 var card_col = ["heart","spade","diamond","clubs"]
 var card_val = ["1","2","3","4","5","6","7","8","9","J","Q","K","Ace"]
-
+var dead_card=[]
 var val_rank={
 	"2": 2, "3": 3, "4": 4, "5": 5,
 	"6": 6, "7": 7, "8": 8, "9": 9,
@@ -53,7 +53,7 @@ func _process(delta: float) -> void:
 			print("Card expired:", card)
 	
 	for card in to_remove:
-		
+		dead_card.append(card)
 		player_cards[player_cards.find(card)]=[card_col.pick_random(), card_val.pick_random(), randi_range(30,50)]
 		print(checkWinner())
 		
