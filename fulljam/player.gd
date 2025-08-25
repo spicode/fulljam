@@ -30,16 +30,19 @@ func _ready():
 		var card = [card_col.pick_random(), card_val.pick_random(), randi_range(30,50)]
 		enemy_cards.append(card)
 		print(card)
+		
+	print(checkWinner())
+func checkWinner() -> String:
 	var result = PokerHand.evaluate_hand(player_cards)
 	var bad_result = PokerHand.evaluate_hand(enemy_cards)
 	print("You(player) got a ", result)
 	print("ze bad(enemy) got a ",bad_result)
 	if result.points > bad_result.points:
-		print("You win!")
+		return "player"
 	elif result.points < bad_result.points:
-		print("Enemy wins!")
+		return "enemy"
 	else:
-		print("Tie!")
+		return "tie"
 func _process(delta: float) -> void:
 	var to_remove = []
 	for card in player_cards:
@@ -52,7 +55,7 @@ func _process(delta: float) -> void:
 	for card in to_remove:
 		
 		player_cards[player_cards.find(card)]=[card_col.pick_random(), card_val.pick_random(), randi_range(30,50)]
-		var result = PokerHand.evaluate_hand(player_cards)
-		print(result)
+		print(checkWinner())
+		
 		
 		

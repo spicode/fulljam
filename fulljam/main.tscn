@@ -95,3 +95,7 @@ label_settings = SubResource("LabelSettings_lquwl")
 
 [node name="player" parent="." instance=ExtResource("3_lquwl")]
 position = Vector2(339.099, 476.724)
+
+[node name="winner" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

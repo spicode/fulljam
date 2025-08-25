@@ -11,3 +11,4 @@ func _process(delta: float) -> void:
 	for card in player.player_cards:
 		cardLables[index].text = str(card[0]," ", card[1],"\ntime left: ",int(card[2]))
 		index+=1
+	$winner.text = player.checkWinner()
