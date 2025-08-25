@@ -4,7 +4,8 @@ var mouse_offset   #center mouse on click
 var delay_dragging = 5
 var delay_drop = 0.5
 var drop_spots
-
+signal discard(card:Array)
+var card : Array
 func _ready():
 	add_to_group("foods")
 	drop_spots = get_tree().get_nodes_in_group("drop_spot_group")
@@ -19,6 +20,14 @@ func _physics_process(delta):
 			tween.tween_property(self, "position",( get_global_mouse_position() - mouse_offset), delay_dragging * delta)
 
 func _input(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT:
+		if Global.discard <= 0:
+			return
+		if event.pressed:
+			if get_rect().has_point(to_local(event.position)):
+				discard.emit(card)
+				Global.discard -=1
+				print(Global.discard)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			if get_rect().has_point(to_local(event.position)):
