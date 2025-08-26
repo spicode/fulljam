@@ -1,7 +1,7 @@
 extends Node2D
 var PokerHand = preload("res://poker_hands(Im_in_pain).gd").new()
 var card_col = ["heart","spade","diamond","clubs"]
-var card_val = ["1","2","3","4","5","6","7","8","9","J","Q","K","Ace"]
+var card_val = ["2","3","4","5","6","7","8","9","J","Q","K","Ace"]
 var dead_card=[]
 var winner : String= ""
 var val_rank={

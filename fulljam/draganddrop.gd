@@ -42,6 +42,7 @@ func _input(event):
 			for drop_spot in drop_spots:
 				if drop_spot.has_overlapping_areas() and drop_spot.get_overlapping_areas().has(self.get_node("Area2D")):
 					var snap_position = drop_spot.position
+					print(snap_position)
 					var tween = get_tree().create_tween()
 					tween.tween_property(self, "position", snap_position, delay_drop)
 					

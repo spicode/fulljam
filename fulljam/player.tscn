@@ -7,3 +7,4 @@
 script = ExtResource("1_4flbx")
 
 [node name="timer" parent="." instance=ExtResource("2_onrkg")]
+script = null
