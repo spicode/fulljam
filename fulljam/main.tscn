@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://7fglu7e8utkl" path="res://cheese_backgrund.jpg" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://vd31ntwfv3q0" path="res://card.tscn" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cflc0d3q2v1u3" path="res://player.tscn" id="3_lquwl"]
-[ext_resource type="PackedScene" path="res://card_area.tscn" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://cfuvksm1ojmh2" path="res://card_area.tscn" id="5_7mycd"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_h2yge")
@@ -40,28 +40,28 @@ position = Vector2(640, 866)
 position = Vector2(418, 814)
 
 [node name="cardArea1" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
-position = Vector2(1820, 838)
+position = Vector2(1820, 840)
 
 [node name="cardArea2" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
-position = Vector2(1636, 940)
+position = Vector2(1636, 840)
 
 [node name="cardArea3" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
-position = Vector2(1155, 836)
+position = Vector2(1155, 840)
 
 [node name="cardArea4" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
-position = Vector2(177, 832)
+position = Vector2(177, 840)
 
 [node name="cardArea5" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
-position = Vector2(1406, 810)
+position = Vector2(1406, 840)
 
 [node name="cardArea6" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
-position = Vector2(680, 839)
+position = Vector2(680, 840)
 
 [node name="cardArea7" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
 position = Vector2(419, 840)
 
 [node name="cardArea8" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
-position = Vector2(919, 850)
+position = Vector2(919, 840)
 
 [node name="cardArea9" parent="." groups=["drop_out"] instance=ExtResource("5_7mycd")]
 position = Vector2(392, 178)
