@@ -91,10 +91,10 @@ func _process(delta: float) -> void:
 		else:
 			cardLables[index].text = str(card[0]," ", card[1],"\ntime left: ",int(card[2]))
 		index+=1
-	$winner.text = player.winner
+	$points.text = str(Global.points)
 	
 
 func _on_card_discard(card: Array) -> void:
 	var index = player.player_cards.find(card)
 	player.player_cards[index] = [player.card_col.pick_random(), player.card_val.pick_random(), randi_range(30,50)]
-	player.winner = player.checkWinner()
+	

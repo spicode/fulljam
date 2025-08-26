@@ -26,15 +26,15 @@ func _ready():
 		
 	
 	print("enemy cards:")
-	for i in range(8):
+	for i in range(5):
 		var decay = 30
 		var card = [card_col.pick_random(), card_val.pick_random(), randi_range(30,50)]
 		enemy_cards.append(card)
 		print(card)
-	winner = checkWinner()
+	
 	
 func checkWinner() -> String:
-	var result = PokerHand.evaluate_hand(player_cards)
+	var result = PokerHand.evaluate_hand(Global.cardsSelected)
 	var bad_result = PokerHand.evaluate_hand(enemy_cards)
 	
 	if result.points > bad_result.points:
@@ -55,7 +55,17 @@ func _process(delta: float) -> void:
 	for card in to_remove:
 		dead_card.append(card)
 		player_cards[player_cards.find(card)]=[card_col.pick_random(), card_val.pick_random(), randi_range(30,50)]
-		winner = checkWinner()
 		
 		
+		
+		
+
+
+func _on_shabimt_pressed() -> void:
+	if Global.cardsSelected:
+		var SelectedCards = Global.cardsSelected
+		print(PokerHand.evaluate_hand(Global.cardsSelected))
+		print(Global.cardsSelected)
+		var result = PokerHand.evaluate_hand(Global.cardsSelected)["points"]
+		Global.points += result
 		

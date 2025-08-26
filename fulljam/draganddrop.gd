@@ -11,7 +11,6 @@ var snap_position
 var normScale = Vector2(4.5,4.5)
 var highScale = Vector2(5.5,5.6)
 func _ready():
-	add_to_group("foods")
 	drop_spots = get_tree().get_nodes_in_group("drop_spot_group")
 	drop_outs = get_tree().get_nodes_in_group("drop_out")
 	_tween()
@@ -32,18 +31,19 @@ func _input(event):
 		if Global.discard <= 0:
 			return
 		if event.pressed:
+			
 			if get_rect().has_point(to_local(event.position)):
 				discard.emit(card)
 				Global.discard -=1
 				print(Global.discard)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed:
+		if event.is_pressed():
 			if get_rect().has_point(to_local(event.position)):
 				
 				is_dragging = true
 				Global.is_dragging = true
 				mouse_offset = get_global_mouse_position()-position
-		else:
+		elif event.is_released():
 			is_dragging = false
 			Global.is_dragging = false
 			_tween()
@@ -52,7 +52,8 @@ func _tween():
 				var tween = get_tree().create_tween()
 				if drop_spot.has_overlapping_areas() and drop_spot.get_overlapping_areas().has(self.get_node("Area2D")):
 					snap_position = drop_spot.position
-					Global.cardsSelected.erase(card)
+					if Global.cardsSelected.has(card):
+						Global.cardsSelected.erase(card)
 					tween.parallel().tween_property(self, "position", snap_position, delay_drop)
 					
 					
@@ -68,7 +69,8 @@ func _tween():
 					print(Global.cardsSelected)
 					tween.parallel().tween_property(self, "position", snap_position, delay_drop)
 				else:
-					
+					if Global.cardsSelected.has(card):
+						Global.cardsSelected.erase(card)
 					tween.parallel().tween_property(self, "position", snap_position, delay_drop)		
 					
 
