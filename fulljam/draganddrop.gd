@@ -52,6 +52,7 @@ func _tween():
 				var tween = get_tree().create_tween()
 				if drop_spot.has_overlapping_areas() and drop_spot.get_overlapping_areas().has(self.get_node("Area2D")):
 					snap_position = drop_spot.position
+					Global.cardsSelected.erase(card)
 					tween.parallel().tween_property(self, "position", snap_position, delay_drop)
 					
 					
@@ -63,7 +64,8 @@ func _tween():
 				var tween = get_tree().create_tween()
 				if drop_out.has_overlapping_areas() and drop_out.get_overlapping_areas().has(self.get_node("Area2D")):
 					snap_position = drop_out.position
-					
+					Global.cardsSelected.append(card)
+					print(Global.cardsSelected)
 					tween.parallel().tween_property(self, "position", snap_position, delay_drop)
 				else:
 					
