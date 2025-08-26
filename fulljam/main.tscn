@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://7fglu7e8utkl" path="res://cheese_backgrund.jpg" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://vd31ntwfv3q0" path="res://card.tscn" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cflc0d3q2v1u3" path="res://player.tscn" id="3_lquwl"]
-[ext_resource type="PackedScene" uid="uid://cfuvksm1ojmh2" path="res://card_area.tscn" id="5_7mycd"]
+[ext_resource type="PackedScene" path="res://card_area.tscn" id="5_7mycd"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_h2yge")
