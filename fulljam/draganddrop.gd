@@ -8,10 +8,14 @@ var drop_outs#to spot to drop to output
 signal discard(card:Array)
 var card : Array
 var snap_position 
+var ogpos
 var normScale = Vector2(4.5,4.5)
 var highScale = Vector2(5.5,5.6)
+@onready var player: Node2D = $"../player"
+
 @onready var audio = $"../AudioStreamPlayer2D"
 func _ready():
+	ogpos = position
 	drop_spots = get_tree().get_nodes_in_group("drop_spot_group")
 	drop_outs = get_tree().get_nodes_in_group("drop_out")
 	snap_position = position
@@ -85,3 +89,9 @@ func _tween():
 func _on_area_2d_enterd(area):
 	if area.is_in_group("screen"):
 		queue_free()
+func back2og():
+	position.y= 4000
+	position.x= 0
+	var tween = get_tree().create_tween()
+	player.player_cards[player.player_cards.find(card)]=[player.card_col.pick_random(), player.card_val.pick_random(), randi_range(30,50)]
+	tween.parallel().tween_property(self, "position", ogpos, 0.4)		

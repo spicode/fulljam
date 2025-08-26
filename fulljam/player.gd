@@ -72,17 +72,24 @@ func _on_shabimt_pressed() -> void:
 	for i in range(min(5, Global.cardsSelected.size())):
 		var c = Global.cardsSelected[i]
 		clean_cards.append([c[0], c[1]])
-
+		
+	var tween = get_tree().create_tween()
+	for c in Global.cardsSelectedNodes:
+		tween.tween_property(c, "position", Vector2(c.position.x+3000,c.position.y), 0.5)
+		
+		tween.tween_callback(c.back2og)
 	var result = PokerHand.evaluate_hand(clean_cards)
 	print("Selected cards (clean):", clean_cards)
 	print("Evaluation result:", result)
 	print("Hand name:", result.name)
 	print("Points:", result.points)
-
 	Global.points += result.points
-	
+	Global.cardsSelected = []
+	Global.cardsSelectedNodes = []
+
 func update_selected_cards():
 	Global.cardsSelected.clear()
 	for c in get_tree().get_nodes_in_group("playerCards"):
 		if c.position.y < 300:  # selection rule
+			Global.cardsSelectedNodes.append(c)
 			Global.cardsSelected.append([c.card[0], c.card[1]])

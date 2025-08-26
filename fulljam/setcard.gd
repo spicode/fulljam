@@ -56,6 +56,7 @@ const JACK_OF_SPADE = preload("res://cards/SPADES/jack_of_spades.png")
 const QUEEN_OF_SPADE = preload("res://cards/SPADES/queen_of_spades.png")
 const KING_OF_SPADE = preload("res://cards/SPADES/king_of_spades.png")
 const ACE_OF_SPADE = preload("res://cards/SPADES/ace_of_spades.png")
+
 const cardsdict = {
 	["clubs","2"]: _2_OF_CLUBS, ["clubs","3"]: _3_OF_CLUBS, ["clubs","4"]: _4_OF_CLUBS,
 	["clubs","5"]: _5_OF_CLUBS, ["clubs","6"]: _6_OF_CLUBS, ["clubs","7"]: _7_OF_CLUBS,
