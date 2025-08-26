@@ -1,18 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbvoxqmnvpgxx"]
+[gd_scene load_steps=6 format=3 uid="uid://cbvoxqmnvpgxx"]
 
 [ext_resource type="Script" uid="uid://clx43j302b40g" path="res://setcard.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://7fglu7e8utkl" path="res://cheese_backgrund.jpg" id="2_1bvp3"]
-[ext_resource type="Script" uid="uid://jbaoyatn2rks" path="res://draganddrop.gd" id="3_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://dhmt15tegl00k" path="res://ze_biscuit.png" id="3_7mycd"]
+[ext_resource type="PackedScene" uid="uid://vd31ntwfv3q0" path="res://card.tscn" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cflc0d3q2v1u3" path="res://player.tscn" id="3_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cfuvksm1ojmh2" path="res://card_area.tscn" id="5_7mycd"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
-line_spacing = 2.99
-font_size = 33
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
-size = Vector2(38.6667, 45.5556)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_h2yge")
@@ -23,182 +15,38 @@ position = Vector2(966, 539.131)
 scale = Vector2(6.44, 6.4151)
 texture = ExtResource("2_1bvp3")
 
-[node name="card1" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(176, 450)
-scale = Vector2(4.5, 4.5)
-texture = ExtResource("3_7mycd")
-script = ExtResource("3_1bvp3")
+[node name="card1" parent="." instance=ExtResource("3_7mycd")]
+position = Vector2(950, 845)
 
-[node name="Label" type="Label" parent="card1"]
-texture_filter = 2
-offset_left = -18.51
-offset_top = -20.09
-offset_right = 18.49
-offset_bottom = 19.92
-scale = Vector2(0.23, 0.23)
-label_settings = SubResource("LabelSettings_lquwl")
+[node name="card2" parent="." instance=ExtResource("3_7mycd")]
+position = Vector2(161, 798)
 
-[node name="Area2D" type="Area2D" parent="card1"]
+[node name="card3" parent="." instance=ExtResource("3_7mycd")]
+position = Vector2(1812, 884)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="card1/Area2D"]
-position = Vector2(-1.33333, 0.555557)
-shape = SubResource("RectangleShape2D_7mycd")
+[node name="card4" parent="." instance=ExtResource("3_7mycd")]
+position = Vector2(1646, 919)
 
-[node name="card2" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(695.695, 450)
-scale = Vector2(4.5, 4.5)
-texture = ExtResource("3_7mycd")
-script = ExtResource("3_1bvp3")
+[node name="card5" parent="." instance=ExtResource("3_7mycd")]
+position = Vector2(1424, 829)
 
-[node name="Label" type="Label" parent="card2"]
-texture_filter = 2
-offset_left = -18.51
-offset_top = -20.09
-offset_right = 18.49
-offset_bottom = 19.92
-scale = Vector2(0.23, 0.23)
-label_settings = SubResource("LabelSettings_lquwl")
+[node name="card6" parent="." instance=ExtResource("3_7mycd")]
+position = Vector2(1217, 847)
 
-[node name="Area2D" type="Area2D" parent="card2"]
+[node name="card7" parent="." instance=ExtResource("3_7mycd")]
+position = Vector2(640, 866)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="card2/Area2D"]
-position = Vector2(-1.33333, 0.555557)
-shape = SubResource("RectangleShape2D_7mycd")
-
-[node name="card3" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(509, 450)
-scale = Vector2(4.5, 4.5)
-texture = ExtResource("3_7mycd")
-script = ExtResource("3_1bvp3")
-
-[node name="Label" type="Label" parent="card3"]
-texture_filter = 2
-offset_left = -18.51
-offset_top = -20.09
-offset_right = 18.49
-offset_bottom = 19.92
-scale = Vector2(0.23, 0.23)
-label_settings = SubResource("LabelSettings_lquwl")
-
-[node name="Area2D" type="Area2D" parent="card3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="card3/Area2D"]
-position = Vector2(-1.33333, 0.555557)
-shape = SubResource("RectangleShape2D_7mycd")
-
-[node name="card4" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(344.593, 450)
-scale = Vector2(4.5, 4.5)
-texture = ExtResource("3_7mycd")
-script = ExtResource("3_1bvp3")
-
-[node name="Label" type="Label" parent="card4"]
-texture_filter = 2
-offset_left = -18.51
-offset_top = -20.09
-offset_right = 18.49
-offset_bottom = 19.92
-scale = Vector2(0.23, 0.23)
-label_settings = SubResource("LabelSettings_lquwl")
-
-[node name="Area2D" type="Area2D" parent="card4"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="card4/Area2D"]
-position = Vector2(-1.33333, 0.555557)
-shape = SubResource("RectangleShape2D_7mycd")
-
-[node name="card5" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(173, 810)
-scale = Vector2(4.5, 4.5)
-texture = ExtResource("3_7mycd")
-script = ExtResource("3_1bvp3")
-
-[node name="Label" type="Label" parent="card5"]
-texture_filter = 2
-offset_left = -18.51
-offset_top = -20.09
-offset_right = 18.49
-offset_bottom = 19.92
-scale = Vector2(0.23, 0.23)
-label_settings = SubResource("LabelSettings_lquwl")
-
-[node name="Area2D" type="Area2D" parent="card5"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="card5/Area2D"]
-position = Vector2(-1.33333, 0.555557)
-shape = SubResource("RectangleShape2D_7mycd")
-
-[node name="card6" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(176.25, 234)
-scale = Vector2(4.5, 4.5)
-texture = ExtResource("3_7mycd")
-script = ExtResource("3_1bvp3")
-
-[node name="Label" type="Label" parent="card6"]
-texture_filter = 2
-offset_left = -18.51
-offset_top = -20.09
-offset_right = 18.49
-offset_bottom = 19.92
-scale = Vector2(0.23, 0.23)
-label_settings = SubResource("LabelSettings_lquwl")
-
-[node name="Area2D" type="Area2D" parent="card6"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="card6/Area2D"]
-position = Vector2(-1.33333, 0.555557)
-shape = SubResource("RectangleShape2D_7mycd")
-
-[node name="card7" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(719, 232)
-scale = Vector2(4.5, 4.5)
-texture = ExtResource("3_7mycd")
-script = ExtResource("3_1bvp3")
-
-[node name="Label" type="Label" parent="card7"]
-texture_filter = 2
-offset_left = -18.51
-offset_top = -20.09
-offset_right = 18.49
-offset_bottom = 19.92
-scale = Vector2(0.23, 0.23)
-label_settings = SubResource("LabelSettings_lquwl")
-
-[node name="Area2D" type="Area2D" parent="card7"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="card7/Area2D"]
-position = Vector2(-1.33333, 0.555557)
-shape = SubResource("RectangleShape2D_7mycd")
-
-[node name="card8" type="Sprite2D" parent="." groups=["playerCards"]]
-position = Vector2(492, 228)
-scale = Vector2(4.5, 4.5)
-texture = ExtResource("3_7mycd")
-script = ExtResource("3_1bvp3")
-
-[node name="Label" type="Label" parent="card8"]
-texture_filter = 2
-offset_left = -18.51
-offset_top = -20.09
-offset_right = 18.49
-offset_bottom = 19.92
-scale = Vector2(0.23, 0.23)
-label_settings = SubResource("LabelSettings_lquwl")
-
-[node name="Area2D" type="Area2D" parent="card8"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="card8/Area2D"]
-position = Vector2(-1.33333, 0.555557)
-shape = SubResource("RectangleShape2D_7mycd")
+[node name="card8" parent="." instance=ExtResource("3_7mycd")]
+position = Vector2(418, 814)
 
 [node name="cardArea1" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
 position = Vector2(1820, 838)
 
 [node name="cardArea2" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
-position = Vector2(1650, 822)
+position = Vector2(1636, 940)
 
 [node name="cardArea3" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
-position = Vector2(1199, 831)
+position = Vector2(1155, 836)
 
 [node name="cardArea4" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
 position = Vector2(177, 832)
@@ -215,18 +63,24 @@ position = Vector2(419, 840)
 [node name="cardArea8" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
 position = Vector2(919, 850)
 
+[node name="cardArea9" parent="." groups=["drop_out"] instance=ExtResource("5_7mycd")]
+position = Vector2(392, 178)
+
+[node name="cardArea10" parent="." groups=["drop_out"] instance=ExtResource("5_7mycd")]
+position = Vector2(1388, 200)
+
+[node name="cardArea11" parent="." groups=["drop_out"] instance=ExtResource("5_7mycd")]
+position = Vector2(895, 185)
+
+[node name="cardArea12" parent="." groups=["drop_out"] instance=ExtResource("5_7mycd")]
+position = Vector2(634, 186)
+
+[node name="cardArea13" parent="." groups=["drop_out"] instance=ExtResource("5_7mycd")]
+position = Vector2(1134, 196)
+
 [node name="player" parent="." instance=ExtResource("3_lquwl")]
 position = Vector2(339.099, 476.724)
 
 [node name="winner" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
-
-[connection signal="discard" from="card1" to="." method="_on_card_discard"]
-[connection signal="discard" from="card2" to="." method="_on_card_discard"]
-[connection signal="discard" from="card3" to="." method="_on_card_discard"]
-[connection signal="discard" from="card4" to="." method="_on_card_discard"]
-[connection signal="discard" from="card5" to="." method="_on_card_discard"]
-[connection signal="discard" from="card6" to="." method="_on_card_discard"]
-[connection signal="discard" from="card7" to="." method="_on_card_discard"]
-[connection signal="discard" from="card8" to="." method="_on_card_discard"]

@@ -1,14 +1,19 @@
 extends Sprite2D
 var is_dragging = false #state management
 var mouse_offset   #center mouse on click
-var delay_dragging = 5
-var delay_drop = 0.5
+var delay_dragging = 0.3
+var delay_drop = 0.3
 var drop_spots
+var drop_outs#to spot to drop to output
 signal discard(card:Array)
 var card : Array
+var snap_position
+var normScale = Vector2(4.5,4.5)
+var highScale = Vector2(9,9)
 func _ready():
 	add_to_group("foods")
 	drop_spots = get_tree().get_nodes_in_group("drop_spot_group")
+	drop_outs = get_tree().get_nodes_in_group("drop_out")
 	
 func _physics_process(delta):
 	
@@ -41,11 +46,26 @@ func _input(event):
 			
 			for drop_spot in drop_spots:
 				if drop_spot.has_overlapping_areas() and drop_spot.get_overlapping_areas().has(self.get_node("Area2D")):
-					var snap_position = drop_spot.position
-					print(snap_position)
+					snap_position = drop_spot.position
 					var tween = get_tree().create_tween()
-					tween.tween_property(self, "position", snap_position, delay_drop)
 					
+					tween.parallel().tween_property(self, "position", snap_position, delay_drop)
+					tween.parallel().tween_property(self, "scale", highScale, delay_drop)
+					
+				else:
+					var tween = get_tree().create_tween()
+					tween.parallel().tween_property(self, "position", snap_position, delay_drop)
+					tween.parallel().tween_property(self, "scale", normScale, delay_drop)
+			for drop_out in drop_outs:
+				if drop_out.has_overlapping_areas() and drop_out.get_overlapping_areas().has(self.get_node("Area2D")):
+					snap_position = drop_out.position
+					var tween = get_tree().create_tween()
+					tween.parallel().tween_property(self, "position", snap_position, delay_drop)
+					tween.parallel().tween_property(self, "scale", highScale, delay_drop)
+				else:
+					var tween = get_tree().create_tween()
+					tween.parallel().tween_property(self, "position", snap_position, delay_drop)		
+					tween.parallel().tween_property(self, "scale", normScale, delay_drop)
 					
 
 
