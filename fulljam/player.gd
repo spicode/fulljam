@@ -1,7 +1,7 @@
 extends Node2D
 var PokerHand = preload("res://poker_hands(Im_in_pain).gd").new()
 var card_col = ["heart","spade","diamond","clubs"]
-var card_val = ["2","3","4","5","6","7","8","9","J","Q","K","Ace"]
+var card_val = ["2","3","4","5","6","7","8","9","10","J","Q","K","Ace"]
 var dead_card=[]
 var winner : String= ""
 var val_rank={
@@ -62,10 +62,25 @@ func _process(delta: float) -> void:
 
 
 func _on_shabimt_pressed() -> void:
-	if Global.cardsSelected:
-		var SelectedCards = Global.cardsSelected
-		print(PokerHand.evaluate_hand(Global.cardsSelected))
-		print(Global.cardsSelected)
-		var result = PokerHand.evaluate_hand(Global.cardsSelected)["points"]
-		Global.points += result
-		
+	# Make sure the selected cards array is updated
+	Global.cardsSelected.clear()
+	for card in player_cards:
+		# Add only cards that are visually “selected”
+		Global.cardsSelected.append(card)
+
+	if Global.cardsSelected.size() < 5:
+		print("Not enough cards selected!")
+		return
+
+	var clean_cards = []
+	for c in Global.cardsSelected:
+		clean_cards.append([c[0], c[1]])
+
+	var result = PokerHand.evaluate_hand(clean_cards)
+	
+	print("Selected cards (clean):", clean_cards)
+	print("Evaluation result:", result)
+	print("Hand name:", result.name)
+	print("Points:", result.points)
+	
+	Global.points += result.points

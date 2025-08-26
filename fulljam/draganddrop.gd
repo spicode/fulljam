@@ -10,6 +10,7 @@ var card : Array
 var snap_position
 var normScale = Vector2(4.5,4.5)
 var highScale = Vector2(5.5,5.6)
+@onready var audio = $"../AudioStreamPlayer2D"
 func _ready():
 	drop_spots = get_tree().get_nodes_in_group("drop_spot_group")
 	drop_outs = get_tree().get_nodes_in_group("drop_out")
@@ -23,6 +24,7 @@ func _physics_process(delta):
 			var tween = get_tree().create_tween()
 			tween.parallel().tween_property(self, "position",( get_global_mouse_position() - mouse_offset), delay_dragging * delta)
 			tween.parallel().tween_property(self, "scale", highScale, 0.1)
+			audio.play()
 	else:
 		var tween = get_tree().create_tween()
 		tween.parallel().tween_property(self, "scale", normScale, delay_drop)

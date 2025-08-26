@@ -7,6 +7,10 @@ var rank_order = {
 }
 
 func evaluate_hand(hand: Array) -> Dictionary:
+	# Guard: need exactly 5 cards to evaluate proper poker hands
+	if hand.size() < 5:
+		return {"name": "Incomplete Hand", "points": 0}
+
 	var ranks = []
 	var suits = []
 	for card in hand:
@@ -21,8 +25,8 @@ func evaluate_hand(hand: Array) -> Dictionary:
 	var unique_counts = counts.values()
 	unique_counts.sort()
 
-	var is_flush = suits.count(suits[0]) == suits.size()
-	var is_straight = ranks.size() == 5 and ranks[-1] - ranks[0] == 4 and counts.size() == 5
+	var is_flush = hand.size() == 5 and suits.count(suits[0]) == suits.size()
+	var is_straight = hand.size() == 5 and ranks[-1] - ranks[0] == 4 and counts.size() == 5
 	var is_royal = is_straight and ranks[0] == 10
 
 	if is_flush and is_royal:
