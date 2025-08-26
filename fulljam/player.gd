@@ -37,12 +37,18 @@ func _ready():
 func checkWinner() -> String:
 	var result = PokerHand.evaluate_hand(Global.cardsSelected)
 	var bad_result = PokerHand.evaluate_hand(enemy_cards)
-	
+	print(bad_result)
 	if result.points > bad_result.points:
+		print("platyer")
+		$"../winner_is".text = "player has won yeepee"
 		return "player"
 	elif result.points < bad_result.points:
+		print("enemy")
+		$"../winner_is".text = "you dumb fuck"
 		return "enemy"
 	else:
+		print("you both suck at the same level")
+		$"../winner_is".text = "jesus you both are bad"
 		return "tie"
 func _process(delta: float) -> void:
 
@@ -57,6 +63,8 @@ func _process(delta: float) -> void:
 	for card in to_remove:
 		dead_card.append(card)
 		player_cards[player_cards.find(card)]=[card_col.pick_random(), card_val.pick_random(), randi_range(30,50)]
+		enemy_cards[enemy_cards.find(card)]=[card_col.pick_random(), card_val.pick_random(), randi_range(30,50)]
+		
 		
 		
 		
@@ -86,7 +94,7 @@ func _on_shabimt_pressed() -> void:
 	Global.points += result.points
 	Global.cardsSelected = []
 	Global.cardsSelectedNodes = []
-
+	checkWinner()
 func update_selected_cards():
 	Global.cardsSelected.clear()
 	for c in get_tree().get_nodes_in_group("playerCards"):
