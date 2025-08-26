@@ -79,9 +79,11 @@ const cardsdict = {
 	["spade","Ace"]: ACE_OF_SPADE
 }
 @onready var cards = [$card1, $card2, $card3, $card4, $card5,$card6, $card7, $card8]
+@onready var snapPoses: Array =[$card1.snap_position, $card2.snap_position, $card3.snap_position, $card4.snap_position, $card5,$card6.snap_position, $card7.snap_position, $card8.snap_position]
 @onready var cardLables = [$card1/Label, $card2/Label, $card3/Label, $card4/Label, $card5/Label,$card6/Label,$card7/Label, $card8/Label]
 func _process(delta: float) -> void:
 	var index = 0
+	snapPoses = [$card1.snap_position, $card2.snap_position, $card3.snap_position, $card4.snap_position, $card5,$card6.snap_position, $card7.snap_position, $card8.snap_position]
 	for card in player.player_cards:
 		
 		cards[index].card = card

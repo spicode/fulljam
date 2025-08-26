@@ -8,8 +8,7 @@ var rank_order = {
 
 func evaluate_hand(hand: Array) -> Dictionary:
 	# Guard: need exactly 5 cards to evaluate proper poker hands
-	if hand.size() < 5:
-		return {"name": "Incomplete Hand", "points": 0}
+	print("\n",hand,"\n")
 
 	var ranks = []
 	var suits = []

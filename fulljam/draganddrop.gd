@@ -7,27 +7,32 @@ var drop_spots
 var drop_outs#to spot to drop to output
 signal discard(card:Array)
 var card : Array
-var snap_position
+var snap_position 
 var normScale = Vector2(4.5,4.5)
 var highScale = Vector2(5.5,5.6)
 @onready var audio = $"../AudioStreamPlayer2D"
 func _ready():
 	drop_spots = get_tree().get_nodes_in_group("drop_spot_group")
 	drop_outs = get_tree().get_nodes_in_group("drop_out")
+	snap_position = position
 	_tween()
 func _physics_process(delta):
 	
 	if Global.is_out_of_bounds:
 		position = Vector2(0,0)
 		Global.is_out_of_bounds = false
+
 	if is_dragging:
 			var tween = get_tree().create_tween()
 			tween.parallel().tween_property(self, "position",( get_global_mouse_position() - mouse_offset), delay_dragging * delta)
 			tween.parallel().tween_property(self, "scale", highScale, 0.1)
 			audio.play()
 	else:
+
 		var tween = get_tree().create_tween()
 		tween.parallel().tween_property(self, "scale", normScale, delay_drop)
+
+
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT:
 		if Global.discard <= 0:
@@ -53,9 +58,9 @@ func _tween():
 			for drop_spot in drop_spots:
 				var tween = get_tree().create_tween()
 				if drop_spot.has_overlapping_areas() and drop_spot.get_overlapping_areas().has(self.get_node("Area2D")):
-					snap_position = drop_spot.position
-					if Global.cardsSelected.has(card):
-						Global.cardsSelected.erase(card)
+					if not $"..".snapPoses.has(drop_spot.position):
+						snap_position = drop_spot.position
+					
 					tween.parallel().tween_property(self, "position", snap_position, delay_drop)
 					
 					
@@ -66,13 +71,12 @@ func _tween():
 			for drop_out in drop_outs:
 				var tween = get_tree().create_tween()
 				if drop_out.has_overlapping_areas() and drop_out.get_overlapping_areas().has(self.get_node("Area2D")):
-					snap_position = drop_out.position
-					Global.cardsSelected.append(card)
-					print(Global.cardsSelected)
+					if not $"..".snapPoses.has(drop_out.position):
+						snap_position = drop_out.position
+					
 					tween.parallel().tween_property(self, "position", snap_position, delay_drop)
 				else:
-					if Global.cardsSelected.has(card):
-						Global.cardsSelected.erase(card)
+					
 					tween.parallel().tween_property(self, "position", snap_position, delay_drop)		
 					
 

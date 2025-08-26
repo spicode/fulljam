@@ -24,6 +24,10 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 mouse_cursor/custom_image="uid://cii138qa4vn0m"
 
+[global_group]
+
+playerCards=""
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
