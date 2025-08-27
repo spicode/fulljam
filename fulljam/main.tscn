@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cbvoxqmnvpgxx"]
 
 [ext_resource type="Script" uid="uid://clx43j302b40g" path="res://setcard.gd" id="1_h2yge"]
-[ext_resource type="Texture2D" uid="uid://7fglu7e8utkl" path="res://cheese_backgrund.jpg" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://ho366lm6p1ui" path="res://background.png" id="2_7mycd"]
 [ext_resource type="PackedScene" uid="uid://vd31ntwfv3q0" path="res://card.tscn" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cflc0d3q2v1u3" path="res://player.tscn" id="3_lquwl"]
 [ext_resource type="PackedScene" path="res://card_area.tscn" id="5_7mycd"]
@@ -15,72 +15,77 @@ script = ExtResource("1_h2yge")
 
 [node name="CheeseBackgrund" type="Sprite2D" parent="."]
 texture_filter = 2
-position = Vector2(966, 539.131)
-scale = Vector2(6.44, 6.4151)
-texture = ExtResource("2_1bvp3")
+position = Vector2(959.8, 539.923)
+scale = Vector2(1.00021, 1.00014)
+texture = ExtResource("2_7mycd")
 
 [node name="card1" parent="." instance=ExtResource("3_7mycd")]
-position = Vector2(911, 837)
+position = Vector2(816, 900)
 
 [node name="card2" parent="." instance=ExtResource("3_7mycd")]
-position = Vector2(180, 838)
+position = Vector2(138, 900)
 
 [node name="card3" parent="." instance=ExtResource("3_7mycd")]
-position = Vector2(1812, 884)
+position = Vector2(1733, 900)
 
 [node name="card4" parent="." instance=ExtResource("3_7mycd")]
-position = Vector2(1646, 919)
+position = Vector2(1491, 900)
 
 [node name="card5" parent="." instance=ExtResource("3_7mycd")]
-position = Vector2(1411, 837)
+position = Vector2(1264, 900)
 
 [node name="card6" parent="." instance=ExtResource("3_7mycd")]
-position = Vector2(1154, 840)
+position = Vector2(1051, 900)
 
 [node name="card7" parent="." instance=ExtResource("3_7mycd")]
-position = Vector2(681, 838)
+position = Vector2(593, 900)
 
 [node name="card8" parent="." instance=ExtResource("3_7mycd")]
-position = Vector2(422, 835)
+position = Vector2(373, 900)
 
 [node name="cardArea1" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
-position = Vector2(1820, 840)
+position = Vector2(1734, 900)
 
 [node name="cardArea2" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
-position = Vector2(1636, 840)
+position = Vector2(1494, 900)
 
 [node name="cardArea3" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
-position = Vector2(1155, 840)
+position = Vector2(1050, 900)
 
 [node name="cardArea4" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
-position = Vector2(177, 840)
+position = Vector2(134, 900)
 
 [node name="cardArea5" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
-position = Vector2(1406, 840)
+position = Vector2(1261, 900)
 
 [node name="cardArea6" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
-position = Vector2(680, 840)
+position = Vector2(592, 900)
 
 [node name="cardArea7" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
-position = Vector2(419, 840)
+position = Vector2(376, 900)
 
 [node name="cardArea8" parent="." groups=["drop_spot_group"] instance=ExtResource("5_7mycd")]
-position = Vector2(919, 840)
+position = Vector2(815, 900)
 
 [node name="cardArea9" parent="." groups=["drop_out"] instance=ExtResource("5_7mycd")]
-position = Vector2(392, 178)
+position = Vector2(295, 219)
+scale = Vector2(1.105, 2.185)
 
 [node name="cardArea10" parent="." groups=["drop_out"] instance=ExtResource("5_7mycd")]
-position = Vector2(1388, 200)
+position = Vector2(1598, 215)
+scale = Vector2(1.105, 2.185)
 
 [node name="cardArea11" parent="." groups=["drop_out"] instance=ExtResource("5_7mycd")]
-position = Vector2(895, 185)
+position = Vector2(937, 212)
+scale = Vector2(1.105, 2.185)
 
 [node name="cardArea12" parent="." groups=["drop_out"] instance=ExtResource("5_7mycd")]
-position = Vector2(634, 186)
+position = Vector2(643, 225)
+scale = Vector2(1.105, 2.185)
 
 [node name="cardArea13" parent="." groups=["drop_out"] instance=ExtResource("5_7mycd")]
-position = Vector2(1134, 196)
+position = Vector2(1264, 225)
+scale = Vector2(1.105, 2.185)
 
 [node name="player" parent="." instance=ExtResource("3_lquwl")]
 position = Vector2(339.099, 476.724)
@@ -92,10 +97,10 @@ offset_right = 244.0
 offset_bottom = 250.0
 
 [node name="shabimt" type="Button" parent="."]
-offset_left = 1529.0
-offset_top = 254.0
-offset_right = 1923.0
-offset_bottom = 412.0
+offset_left = 1514.0
+offset_top = 503.0
+offset_right = 1908.0
+offset_bottom = 661.0
 theme = SubResource("Theme_lquwl")
 text = "submit cards"
 

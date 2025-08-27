@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cfuvksm1ojmh2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7tuey"]
-size = Vector2(150, 150)
+size = Vector2(130, 130)
 
 [node name="cardArea" type="Area2D"]
 

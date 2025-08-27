@@ -1,14 +1,21 @@
-[gd_scene load_steps=53 format=3 uid="uid://vd31ntwfv3q0"]
+[gd_scene load_steps=55 format=3 uid="uid://vd31ntwfv3q0"]
 
 [ext_resource type="Script" uid="uid://jbaoyatn2rks" path="res://draganddrop.gd" id="2_q5obu"]
 [ext_resource type="Texture2D" uid="uid://budytn45oqx1x" path="res://cards/mold.png" id="2_rjlel"]
+
+[sub_resource type="Gradient" id="Gradient_rjlel"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q5obu"]
+gradient = SubResource("Gradient_rjlel")
+width = 37
+height = 44
 
 [sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
 line_spacing = 2.99
 font_size = 33
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
-size = Vector2(38.6667, 45.5556)
+size = Vector2(36.4444, 44.2222)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjlel"]
 atlas = ExtResource("2_rjlel")
@@ -349,6 +356,7 @@ animations = [{
 
 [node name="card1" type="Sprite2D" groups=["playerCards"]]
 scale = Vector2(4.5, 4.5)
+texture = SubResource("GradientTexture2D_q5obu")
 script = ExtResource("2_q5obu")
 
 [node name="Label" type="Label" parent="."]
@@ -363,7 +371,7 @@ label_settings = SubResource("LabelSettings_lquwl")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1.33333, 0.555557)
+position = Vector2(-1.33333, -0.111121)
 shape = SubResource("RectangleShape2D_7mycd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

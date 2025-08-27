@@ -1,9 +1,5 @@
 extends Node2D
 @onready var player: Node2D = $player
-@onready var card_1: Sprite2D = $card1
-@onready var card_2: Sprite2D = $card2
-@onready var card_4: Sprite2D = $card4
-@onready var card_5: Sprite2D = $card5
 const _2_OF_CLUBS = preload("res://cards/2_of_clubs.png")
 const _3_OF_CLUBS = preload("res://cards/3_of_clubs.png")
 const _4_OF_CLUBS = preload("res://cards/4_of_clubs.png")
