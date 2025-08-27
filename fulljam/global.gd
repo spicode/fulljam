@@ -7,3 +7,4 @@ var cardsSelectedNodes : Array[Node]
 var cardPos : Array
 var points : int
 var turnsLeft : int
+var hands_played: int
