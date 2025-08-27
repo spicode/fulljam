@@ -91,6 +91,7 @@ func _process(delta: float) -> void:
 		if cardsdict.has([card[0],card[1]]):
 			var check : Array = [card[0],card[1]]
 			cards[index].texture = cardsdict[check]
+			
 		else:
 			cardLables[index].text = str(card[0]," ", card[1],"\ntime left: ",int(card[2]))
 		index+=1

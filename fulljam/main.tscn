@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://clx43j302b40g" path="res://setcard.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://7fglu7e8utkl" path="res://cheese_backgrund.jpg" id="2_1bvp3"]
-[ext_resource type="PackedScene" path="res://card.tscn" id="3_7mycd"]
+[ext_resource type="PackedScene" uid="uid://vd31ntwfv3q0" path="res://card.tscn" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cflc0d3q2v1u3" path="res://player.tscn" id="3_lquwl"]
-[ext_resource type="PackedScene" path="res://card_area.tscn" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://cfuvksm1ojmh2" path="res://card_area.tscn" id="5_7mycd"]
 [ext_resource type="AudioStream" uid="uid://dntr2uemws7iu" path="res://ze_card.mp3" id="6_7mycd"]
 
 [sub_resource type="Theme" id="Theme_lquwl"]
@@ -108,5 +108,8 @@ position = Vector2(6, 291)
 [node name="winner_is" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="pressed" from="shabimt" to="player" method="_on_shabimt_pressed"]

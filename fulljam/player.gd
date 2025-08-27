@@ -20,16 +20,16 @@ func _ready():
 
 	print("player cards:")
 	for i in range(8):
-		var decay = 30
-		var card = [card_col.pick_random(), card_val.pick_random(), randi_range(30,60)]
+		
+		var card = [card_col.pick_random(), card_val.pick_random(), randi_range(43,60)]
 		player_cards.append(card)
 		print(card)
 		
 	
 	print("enemy cards:")
 	for i in range(5):
-		var decay = 30
-		var card = [card_col.pick_random(), card_val.pick_random(), randi_range(30,50)]
+		
+		var card = [card_col.pick_random(), card_val.pick_random(), randi_range(43,60)]
 		enemy_cards.append(card)
 		print(card)
 	
@@ -62,8 +62,8 @@ func _process(delta: float) -> void:
 	
 	for card in to_remove:
 		dead_card.append(card)
-		player_cards[player_cards.find(card)]=[card_col.pick_random(), card_val.pick_random(), randi_range(30,50)]
-		enemy_cards[enemy_cards.find(card)]=[card_col.pick_random(), card_val.pick_random(), randi_range(30,50)]
+		player_cards[player_cards.find(card)]=[card_col.pick_random(), card_val.pick_random(), randi_range(47,60)]
+		enemy_cards[enemy_cards.find(card)]=[card_col.pick_random(), card_val.pick_random(), randi_range(47,60)]
 		
 		
 		
@@ -72,29 +72,30 @@ func _process(delta: float) -> void:
 
 
 func _on_shabimt_pressed() -> void:
-	update_selected_cards()
+	if $"../Timer".is_stopped():
+		update_selected_cards()
+		checkWinner()
 	
-
-	# only take first 5 for poker
-	var clean_cards = []
-	for i in range(min(5, Global.cardsSelected.size())):
-		var c = Global.cardsSelected[i]
-		clean_cards.append([c[0], c[1]])
-		
-	var tween = get_tree().create_tween()
-	for c in Global.cardsSelectedNodes:
-		tween.tween_property(c, "position", Vector2(c.position.x+3000,c.position.y), 0.5)
-		
-		tween.tween_callback(c.back2og)
-	var result = PokerHand.evaluate_hand(clean_cards)
-	print("Selected cards (clean):", clean_cards)
-	print("Evaluation result:", result)
-	print("Hand name:", result.name)
-	print("Points:", result.points)
-	Global.points += result.points
-	Global.cardsSelected = []
-	Global.cardsSelectedNodes = []
-	checkWinner()
+		# only take first 5 for poker
+		var clean_cards = []
+		for i in range(min(5, Global.cardsSelected.size())):
+			var c = Global.cardsSelected[i]
+			clean_cards.append([c[0], c[1]])
+			
+		var tween = get_tree().create_tween()
+		for c in Global.cardsSelectedNodes:
+			tween.tween_property(c, "position", Vector2(c.position.x+3000,c.position.y), 0.5)
+			
+			tween.tween_callback(c.back2og)
+		var result = PokerHand.evaluate_hand(clean_cards)
+		print("Selected cards (clean):", clean_cards)
+		print("Evaluation result:", result)
+		print("Hand name:", result.name)
+		print("Points:", result.points)
+		Global.points += result.points
+		Global.cardsSelected = []
+		Global.cardsSelectedNodes = []
+		$"../Timer".start(1)
 func update_selected_cards():
 	Global.cardsSelected.clear()
 	for c in get_tree().get_nodes_in_group("playerCards"):

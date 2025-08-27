@@ -7,7 +7,8 @@ var rank_order = {
 }
 
 func evaluate_hand(hand: Array) -> Dictionary:
-
+	if hand.is_empty():
+		return {"name": "empty", "points": 0}
 	print("\n",hand,"\n")
 
 	var ranks = []

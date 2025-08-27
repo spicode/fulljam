@@ -15,6 +15,7 @@ var highScale = Vector2(5.5,5.6)
 
 @onready var audio = $"../AudioStreamPlayer2D"
 func _ready():
+	$AnimatedSprite2D.frame = 0
 	ogpos = position
 	drop_spots = get_tree().get_nodes_in_group("drop_spot_group")
 	drop_outs = get_tree().get_nodes_in_group("drop_out")
@@ -22,6 +23,9 @@ func _ready():
 	_tween()
 func _physics_process(delta):
 	
+	if card:
+		
+		$AnimatedSprite2D.frame = int(card[2])
 	if Global.is_out_of_bounds:
 		position = Vector2(0,0)
 		Global.is_out_of_bounds = false
@@ -69,8 +73,8 @@ func _tween():
 					
 					
 				else:
-					if snap_position:
-						tween.parallel().tween_property(self, "position", snap_position, delay_drop)
+					
+					tween.parallel().tween_property(self, "position", snap_position, delay_drop)
 					
 			for drop_out in drop_outs:
 				var tween = get_tree().create_tween()
