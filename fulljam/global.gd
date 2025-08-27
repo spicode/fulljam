@@ -6,9 +6,4 @@ var cardsSelected : Array[Array]
 var cardsSelectedNodes : Array[Node]
 var cardPos : Array
 var points : int
-<<<<<<< Updated upstream
-var turnsLeft : int
-var hands_played: int
-=======
 var turnsLeft : int = 10
->>>>>>> Stashed changes

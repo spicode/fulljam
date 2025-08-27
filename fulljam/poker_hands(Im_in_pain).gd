@@ -10,8 +10,8 @@ func evaluate_hand(hand: Array) -> Dictionary:
 	if hand.is_empty():
 		return {"name": "empty", "points": 0}
 	print("\n",hand,"\n")
-	Global.hands_played+=1
-	print(Global.hands_played)
+	Global.turnsLeft-=1
+	
 
 	var ranks = []
 	var suits = []

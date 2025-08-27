@@ -4,9 +4,6 @@ var Card = preload("res://card.tscn")
 var card_col = ["heart","spade","diamond","clubs"]
 var card_val = ["2","3","4","5","6","7","8","9","10","J","Q","K","Ace"]
 var dead_card=[]
-var player_points=0
-var enemy_points=0
-
 var winner : String= ""
 var val_rank={
 	"2": 2, "3": 3, "4": 4, "5": 5,
@@ -38,31 +35,24 @@ func _ready():
 	
 	
 func checkWinner() -> String:
+	
 	var result = PokerHand.evaluate_hand(Global.cardsSelected)
 	var bad_result = PokerHand.evaluate_hand(enemy_cards)
 	print(bad_result)
 	if result.points > bad_result.points:
-		player_points+=1
 		print("platyer")
 		$"../winner_is".text = "player has won yeepee"
 		return "player"
 	elif result.points < bad_result.points:
 		print("enemy")
 		$"../winner_is".text = "you dumb fuck"
-		enemy_points+=1
 		return "enemy"
 	else:
 		print("you both suck at the same level")
 		$"../winner_is".text = "jesus you both are bad"
 		return "tie"
-	
-	
+
 func _process(delta: float) -> void:
-	if Global.hands_played>=10:
-		if enemy_points>player_points:
-			get_tree().change_scene_to_file("res://bad_ending.tscn")
-		if enemy_points<player_points:
-			get_tree().change_scene_to_file("res://ze_goot_endig.tscn")
 
 	var to_remove = []
 	for card in player_cards:
@@ -85,6 +75,7 @@ func _process(delta: float) -> void:
 
 func _on_shabimt_pressed() -> void:
 	if $"../Timer".is_stopped():
+		
 		update_selected_cards()
 		checkWinner()
 	
@@ -108,6 +99,17 @@ func _on_shabimt_pressed() -> void:
 		Global.cardsSelected = []
 		Global.cardsSelectedNodes = []
 		$"../Timer".start(1)
+	if Global.turnsLeft<=0:
+
+		if $"../winner_is".text == "you dumb fuck":
+			print("baaaaaaaaaaaaaaaaaaa\n\n\n\n\nd")
+			get_tree().change_scene_to_file("res://bad_ending.tscn")
+		elif  $"../winner_is".text == "player has won yeepee":
+			get_tree().change_scene_to_file("res://ze_goot_endig.tscn")
+		else:
+			get_tree().change_scene_to_file("res://bad_ending.tscn")
+	else:
+		print(Global.turnsLeft)
 func update_selected_cards():
 	Global.cardsSelected.clear()
 	for c in get_tree().get_nodes_in_group("playerCards"):
