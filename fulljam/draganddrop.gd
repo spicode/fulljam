@@ -34,6 +34,7 @@ func _physics_process(delta):
 			var tween = get_tree().create_tween()
 			tween.parallel().tween_property(self, "position",( get_global_mouse_position() - mouse_offset), delay_dragging * delta)
 			tween.parallel().tween_property(self, "scale", highScale, 0.1)
+			audio.pitch_scale = randf_range(1,1.25)
 			audio.play()
 	else:
 
@@ -50,7 +51,7 @@ func _input(event):
 			if get_rect().has_point(to_local(event.position)):
 				discard.emit(card)
 				Global.discard -=1
-				print(Global.discard)
+				
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.is_pressed():
 			if get_rect().has_point(to_local(event.position)):

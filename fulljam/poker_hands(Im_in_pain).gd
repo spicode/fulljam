@@ -9,8 +9,7 @@ var rank_order = {
 func evaluate_hand(hand: Array) -> Dictionary:
 	if hand.is_empty():
 		return {"name": "empty", "points": 0}
-	print("\n",hand,"\n")
-	Global.turnsLeft-=1
+	
 	
 
 	var ranks = []
@@ -35,6 +34,8 @@ func evaluate_hand(hand: Array) -> Dictionary:
 		return {"name": "Royal Flush", "points": 200}
 	elif is_flush and is_straight:
 		return {"name": "Straight Flush", "points": 150}
+	elif 5 in unique_counts:
+		return {"name": "Five of a Kind", "points": 125}
 	elif 4 in unique_counts:
 		return {"name": "Four of a Kind", "points": 100}
 	elif 3 in unique_counts and 2 in unique_counts:
