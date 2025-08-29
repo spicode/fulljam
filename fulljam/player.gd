@@ -86,8 +86,12 @@ func _on_shabimt_pressed() -> void:
 		for i in range(min(5, Global.cardsSelected.size())):
 			var c = Global.cardsSelected[i]
 			clean_cards.append([c[0], c[1]])
-			
+			var delay = i * 0.2  
+		
 		var tween = get_tree().create_tween()
+			tween.tween_callback(func():
+		$"../AudioStreamPlayer2D2".play()
+	).set_delay(delay)
 		for c in Global.cardsSelectedNodes:
 			tween.tween_property(c, "position", Vector2(c.position.x+3000,c.position.y), 0.5)
 			tween.tween_callback(c.back2og)
@@ -110,6 +114,7 @@ func _on_shabimt_pressed() -> void:
 		var tween2 =  get_tree().create_tween()
 		points2add = result.points
 		tween2.tween_property($"../pointsAdded", "position",$"../points".position,.75)
+		
 		tween2.tween_callback(_return2normal)
 		Global.cardsSelected = []
 		Global.cardsSelectedNodes = []
@@ -125,15 +130,18 @@ func _on_shabimt_pressed() -> void:
 	else:
 		Global.turnsLeft-=1
 func update_selected_cards():
+	
 	Global.cardsSelected.clear()
 	for c in get_tree().get_nodes_in_group("playerCards"):
 		if c.position.y < 300:  # selection rule
 			Global.cardsSelectedNodes.append(c)
 			Global.cardsSelected.append([c.card[0], c.card[1]])
 func _return2normal():
+	
 	var tween = get_tree().create_tween()
 	$"../pointsAdded".position = ogPointsPos
 	var ogScale = $"../points".scale
+	
 	tween.tween_property($"../points","scale",$"../points".scale*2,0.3).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property($"../points","scale",ogScale,0.3).set_ease(Tween.EASE_IN_OUT)
 	Global.points += points2add

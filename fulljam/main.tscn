@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbvoxqmnvpgxx"]
+[gd_scene load_steps=10 format=3 uid="uid://cbvoxqmnvpgxx"]
 
 [ext_resource type="Script" uid="uid://clx43j302b40g" path="res://setcard.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://ho366lm6p1ui" path="res://background.png" id="2_7mycd"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cflc0d3q2v1u3" path="res://player.tscn" id="3_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cfuvksm1ojmh2" path="res://card_area.tscn" id="5_7mycd"]
 [ext_resource type="AudioStream" uid="uid://dntr2uemws7iu" path="res://ze_card.mp3" id="6_7mycd"]
+[ext_resource type="AudioStream" uid="uid://ck7hfq73x773c" path="res://shuffling-cards-74757.mp3" id="7_272bh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7mycd"]
 font_size = 66
@@ -149,6 +150,9 @@ offset_bottom = 375.0
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_272bh")
 
 [connection signal="discard" from="card1" to="." method="_on_card_discard"]
 [connection signal="discard" from="card2" to="." method="_on_card_discard"]

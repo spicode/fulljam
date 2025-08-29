@@ -97,4 +97,6 @@ func _process(delta: float) -> void:
 func _on_card_discard(card: Array) -> void:
 	var index = player.player_cards.find(card)
 	player.player_cards[index] = [player.card_col.pick_random(), player.card_val.pick_random(), randi_range(30,50),true]
+	$AudioStreamPlayer2D2.play()
+	print("printing")
 	
