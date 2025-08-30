@@ -93,7 +93,7 @@ func _on_shabimt_pressed() -> void:
 		
 		for c in Global.cardsSelectedNodes:
 			tween.tween_property(c, "position", Vector2(c.position.x+3000,c.position.y), 0.5)
-			tween.tween_callback(avishai).set_delay(0.2)
+			tween.tween_callback(avishai)
 			tween.tween_callback(c.back2og)
 		var result = PokerHand.evaluate_hand(clean_cards)
 		var enemyResulte = PokerHand.evaluate_hand(enemy_cards)

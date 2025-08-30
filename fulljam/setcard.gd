@@ -103,4 +103,5 @@ func _ready() -> void:
 	
 	var tween = get_tree().create_tween()
 	tween.tween_property($ColorRect2,"color",Color(0,0,0,0),0.5)
+	tween.tween_callback($ColorRect2.queue_free)
 	
