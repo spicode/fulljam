@@ -24,4 +24,7 @@ func _swap_textures(a: Sprite2D, b: Sprite2D) -> void:
 
 func _on_button_pressed() -> void:
 	var tween = get_tree().create_tween()
-	tween.tween_property($ColorRect2,"color",Color(0,0,0,255),0.5)
+	tween.tween_property($ColorRect2,"color",Color(0,0,0,1.0),0.5)
+	tween.tween_callback(switchScene)
+func switchScene():
+	get_tree().change_scene_to_file("res://main.tscn")

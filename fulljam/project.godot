@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="fulljam"
-run/main_scene="uid://cbvoxqmnvpgxx"
+run/main_scene="uid://dco87ivkwxecj"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]

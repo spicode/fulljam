@@ -29,7 +29,7 @@ scale = Vector2(8.5, 8.5)
 texture = ExtResource("1_nsrqs")
 
 [node name="bird1" type="Sprite2D" parent="." node_paths=PackedStringArray("enemy_bird")]
-position = Vector2(141, 24)
+position = Vector2(120, 31)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_yieug")
 region_enabled = true
@@ -127,6 +127,7 @@ text = "battle"
 [node name="ColorRect2" type="ColorRect" parent="."]
 offset_right = 1918.0
 offset_bottom = 1112.0
+mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
