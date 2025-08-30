@@ -99,9 +99,8 @@ func _on_card_discard(card: Array) -> void:
 	player.player_cards[index] = [player.card_col.pick_random(), player.card_val.pick_random(), randi_range(30,50),true]
 	$AudioStreamPlayer2D.play()
 func _ready() -> void:
-	$ColorRect2.color = Color(0,0,0,255)
-	
+	$ColorRect2.color = Color(0,0,0,1.0)
 	var tween = get_tree().create_tween()
-	tween.tween_property($ColorRect2,"color",Color(0,0,0,0),0.5)
+	tween.tween_property($ColorRect2, "color", Color(0, 0, 0, 0), 0.5) 
 	tween.tween_callback($ColorRect2.queue_free)
 	
