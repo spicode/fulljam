@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cbvoxqmnvpgxx"]
+[gd_scene load_steps=16 format=3 uid="uid://cbvoxqmnvpgxx"]
 
 [ext_resource type="Script" uid="uid://clx43j302b40g" path="res://setcard.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://b24c3ttgu1wta" path="res://backgroundfixed.png" id="2_4c57u"]
@@ -9,13 +9,23 @@
 [ext_resource type="Texture2D" uid="uid://cy2umqhbp5pxl" path="res://sumit_mom1.png" id="6_kek77"]
 [ext_resource type="Texture2D" uid="uid://de1alge53xe2q" path="res://sumit_mom3.png" id="7_4c57u"]
 [ext_resource type="Texture2D" uid="uid://wyjr7nd6rmn3" path="res://sumit_mom2.png" id="8_efxa6"]
-[ext_resource type="PackedScene" path="res://birdwindow.tscn" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://cv2m4e4mkyd5h" path="res://birdwindow.tscn" id="10_4c57u"]
+[ext_resource type="FontFile" uid="uid://cldpw281x8vut" path="res://DeterminationSansWebRegular-369X.ttf" id="12_dg77c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7mycd"]
+font = ExtResource("12_dg77c")
 font_size = 66
+
+[sub_resource type="LabelSettings" id="LabelSettings_dg77c"]
+font = ExtResource("12_dg77c")
+font_size = 56
 
 [sub_resource type="Theme" id="Theme_lquwl"]
 Button/font_sizes/font_size = 53
+
+[sub_resource type="LabelSettings" id="LabelSettings_efxa6"]
+font = ExtResource("12_dg77c")
+font_size = 35
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_h2yge")
@@ -114,10 +124,11 @@ text = "+50"
 label_settings = SubResource("LabelSettings_7mycd")
 
 [node name="points" type="Label" parent="."]
-offset_left = 105.0
-offset_top = 161.0
-offset_right = 244.0
-offset_bottom = 250.0
+offset_left = 1080.0
+offset_top = 724.0
+offset_right = 1219.0
+offset_bottom = 813.0
+label_settings = SubResource("LabelSettings_dg77c")
 
 [node name="turnsLeft" type="Label" parent="."]
 offset_left = 1747.0
@@ -148,17 +159,18 @@ stream = ExtResource("6_7mycd")
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(6, 291)
 
-[node name="winner_is" type="Label" parent="."]
-offset_left = 48.0
-offset_top = 318.0
-offset_right = 145.0
-offset_bottom = 375.0
-
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
 [node name="Sprite2D" parent="." instance=ExtResource("10_4c57u")]
 position = Vector2(145, 595)
+
+[node name="winner_is" type="Label" parent="."]
+offset_left = 232.0
+offset_top = 700.0
+offset_right = 329.0
+offset_bottom = 757.0
+label_settings = SubResource("LabelSettings_efxa6")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 offset_left = 11.0

@@ -18,9 +18,11 @@ func on_bird_clicked(clicked_bird: Sprite2D,enemy_ref: Sprite2D) -> void:
 
 func _swap_textures(a: Sprite2D, b: Sprite2D) -> void:
 	var temp = a.texture
+	var tmpme = a.me
 	a.texture = b.texture
+	a.me = b.me
 	b.texture = temp
-
+	b.me = tmpme
 
 func _on_button_pressed() -> void:
 	var tween = get_tree().create_tween()

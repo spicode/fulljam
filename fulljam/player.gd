@@ -99,7 +99,7 @@ func _on_shabimt_pressed() -> void:
 		var enemyResulte = PokerHand.evaluate_hand(enemy_cards)
 		
 		Global.enemyPoints +=enemyResulte.points
-		$"../winner_is".text = str("Enemy Points: ", Global.enemyPoints*5)
+		$"../winner_is".text = str(" ", Global.enemyPoints*5)
 		
 
 		enemy_cards = []
