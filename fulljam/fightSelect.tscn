@@ -15,94 +15,98 @@
 [sub_resource type="LabelSettings" id="LabelSettings_ge5y0"]
 font_size = 71
 
-[node name="Node2D" type="Node2D" node_paths=PackedStringArray("replaceBird")]
+[node name="Node2D" type="Node2D"]
 script = ExtResource("1_vxoqu")
-replaceBird = NodePath("bird8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1918.0
+offset_bottom = 1112.0
+color = Color(0.298039, 0.529412, 0.376471, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(544, 536)
 scale = Vector2(8.5, 8.5)
 texture = ExtResource("1_nsrqs")
 
-[node name="bird1" type="Sprite2D" parent="." node_paths=PackedStringArray("enemyBird")]
+[node name="bird1" type="Sprite2D" parent="." node_paths=PackedStringArray("enemy_bird")]
 position = Vector2(141, 24)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_yieug")
 region_enabled = true
 region_rect = Rect2(14.1, 43.745, 77.105, 67.01)
 script = ExtResource("3_kixd3")
-enemyBird = NodePath("../bird2")
 me = "chicken"
+enemy_bird = NodePath("../bird2")
 
-[node name="bird2" type="Sprite2D" parent="." node_paths=PackedStringArray("enemyBird")]
+[node name="bird2" type="Sprite2D" parent="." node_paths=PackedStringArray("enemy_bird")]
 position = Vector2(182, 239)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_d4ktu")
 region_enabled = true
 region_rect = Rect2(16.684, 57.265, 54.677, 52.545)
 script = ExtResource("3_kixd3")
-enemyBird = NodePath("../bird1")
 me = "owl"
+enemy_bird = NodePath("../bird1")
 
-[node name="bird3" type="Sprite2D" parent="." node_paths=PackedStringArray("enemyBird")]
+[node name="bird3" type="Sprite2D" parent="." node_paths=PackedStringArray("enemy_bird")]
 position = Vector2(62, 293)
 scale = Vector2(1.22, 1.22)
 texture = ExtResource("4_juouk")
 region_enabled = true
 region_rect = Rect2(14.1, 43.745, 77.105, 67.01)
 script = ExtResource("3_kixd3")
-enemyBird = NodePath("../bird4")
 me = "parrot"
+enemy_bird = NodePath("../bird4")
 
-[node name="bird4" type="Sprite2D" parent="." node_paths=PackedStringArray("enemyBird")]
+[node name="bird4" type="Sprite2D" parent="." node_paths=PackedStringArray("enemy_bird")]
 position = Vector2(101, 482)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("6_vxoqu")
 region_enabled = true
 region_rect = Rect2(25.51, 43.745, 67.05, 67.01)
 script = ExtResource("3_kixd3")
-enemyBird = NodePath("../bird3")
 me = "pinguin"
+enemy_bird = NodePath("../bird3")
 
-[node name="bird5" type="Sprite2D" parent="." node_paths=PackedStringArray("enemyBird")]
+[node name="bird5" type="Sprite2D" parent="." node_paths=PackedStringArray("enemy_bird")]
 position = Vector2(192, 540)
 scale = Vector2(1.405, 1.405)
 texture = ExtResource("7_ge5y0")
 region_enabled = true
 region_rect = Rect2(25.51, 43.745, 67.05, 67.01)
 script = ExtResource("3_kixd3")
-enemyBird = NodePath("../bird7")
-me = "pigon"
+me = "pigeon"
+enemy_bird = NodePath("../bird7")
 
-[node name="bird6" type="Sprite2D" parent="." node_paths=PackedStringArray("enemyBird")]
-position = Vector2(79, 993)
+[node name="bird6" type="Sprite2D" parent="." node_paths=PackedStringArray("enemy_bird")]
+position = Vector2(78, 977)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_sc6ou")
 region_enabled = true
-region_rect = Rect2(19.4882, 76.7931, 46.9662, 44.8632)
+region_rect = Rect2(18.463, 58.338, 53.476, 52.398)
 script = ExtResource("3_kixd3")
-enemyBird = NodePath("../bird8")
 me = "redWinged"
+enemy_bird = NodePath("../bird8")
 
-[node name="bird7" type="Sprite2D" parent="." node_paths=PackedStringArray("enemyBird")]
-position = Vector2(82, 761)
+[node name="bird7" type="Sprite2D" parent="." node_paths=PackedStringArray("enemy_bird")]
+position = Vector2(85, 736)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("9_dbddb")
 region_enabled = true
-region_rect = Rect2(18.4367, 66.6288, 66.9443, 53.6256)
+region_rect = Rect2(18.437, 41.759, 66.944, 67.256)
 script = ExtResource("3_kixd3")
-enemyBird = NodePath("../bird5")
 me = "toucan"
+enemy_bird = NodePath("../bird5")
 
-[node name="bird8" type="Sprite2D" parent="." node_paths=PackedStringArray("enemyBird")]
+[node name="bird8" type="Sprite2D" parent="." node_paths=PackedStringArray("enemy_bird")]
 position = Vector2(174, 821)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("11_ge5y0")
 region_enabled = true
 region_rect = Rect2(17.5177, 51.9544, 71.5007, 59.8235)
 script = ExtResource("3_kixd3")
-enemyBird = NodePath("../bird6")
 me = "you"
+enemy_bird = NodePath("../bird6")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 714.0
@@ -111,3 +115,18 @@ offset_right = 1501.0
 offset_bottom = 149.0
 text = "Chose a bird to replace"
 label_settings = SubResource("LabelSettings_ge5y0")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1296.0
+offset_top = 710.0
+offset_right = 1363.69
+offset_bottom = 741.0
+scale = Vector2(3.705, 3.705)
+text = "battle"
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 1918.0
+offset_bottom = 1112.0
+color = Color(0, 0, 0, 0)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

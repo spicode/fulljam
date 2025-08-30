@@ -8,3 +8,4 @@ var cardPos : Array
 var points : int
 var turnsLeft : int = 10
 var enemyPoints :int = 0
+var bird

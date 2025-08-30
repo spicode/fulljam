@@ -89,11 +89,11 @@ func _on_shabimt_pressed() -> void:
 			var delay = i * 0.2  
 		
 		var tween = get_tree().create_tween()
-			tween.tween_callback(func():
-		$"../AudioStreamPlayer2D2".play()
-	).set_delay(delay)
+		
+		
 		for c in Global.cardsSelectedNodes:
 			tween.tween_property(c, "position", Vector2(c.position.x+3000,c.position.y), 0.5)
+			tween.tween_callback(avishai).set_delay(0.2)
 			tween.tween_callback(c.back2og)
 		var result = PokerHand.evaluate_hand(clean_cards)
 		var enemyResulte = PokerHand.evaluate_hand(enemy_cards)
@@ -146,3 +146,5 @@ func _return2normal():
 	tween.tween_property($"../points","scale",ogScale,0.3).set_ease(Tween.EASE_IN_OUT)
 	Global.points += points2add
 	
+func avishai():
+	$"../AudioStreamPlayer2D".play()

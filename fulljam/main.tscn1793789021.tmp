@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cbvoxqmnvpgxx"]
+[gd_scene load_steps=9 format=3 uid="uid://cbvoxqmnvpgxx"]
 
 [ext_resource type="Script" uid="uid://clx43j302b40g" path="res://setcard.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://ho366lm6p1ui" path="res://background.png" id="2_7mycd"]
@@ -6,10 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cflc0d3q2v1u3" path="res://player.tscn" id="3_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cfuvksm1ojmh2" path="res://card_area.tscn" id="5_7mycd"]
 [ext_resource type="AudioStream" uid="uid://dntr2uemws7iu" path="res://ze_card.mp3" id="6_7mycd"]
-[ext_resource type="Texture2D" uid="uid://cy2umqhbp5pxl" path="res://sumit_mom1.png" id="6_kek77"]
-[ext_resource type="Texture2D" uid="uid://de1alge53xe2q" path="res://sumit_mom3.png" id="7_4c57u"]
-[ext_resource type="Texture2D" uid="uid://wyjr7nd6rmn3" path="res://sumit_mom2.png" id="8_efxa6"]
-[ext_resource type="PackedScene" uid="uid://cv2m4e4mkyd5h" path="res://birdwindow.tscn" id="10_4c57u"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7mycd"]
 font_size = 66
@@ -131,16 +127,13 @@ offset_top = 684.0
 offset_right = 1848.0
 offset_bottom = 773.0
 
-[node name="shabimt" type="TextureButton" parent="."]
+[node name="shabimt" type="Button" parent="."]
 offset_left = 1514.0
 offset_top = 503.0
-offset_right = 1554.0
-offset_bottom = 523.0
-scale = Vector2(8.54211, 7.02429)
+offset_right = 1908.0
+offset_bottom = 661.0
 theme = SubResource("Theme_lquwl")
-texture_normal = ExtResource("6_kek77")
-texture_pressed = ExtResource("7_4c57u")
-texture_hover = ExtResource("8_efxa6")
+text = "submit cards"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_7mycd")
@@ -156,14 +149,6 @@ offset_bottom = 375.0
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
-
-[node name="Sprite2D" parent="." instance=ExtResource("10_4c57u")]
-position = Vector2(145, 595)
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_right = 1918.0
-offset_bottom = 1112.0
-color = Color(0, 0, 0, 0)
 
 [connection signal="discard" from="card1" to="." method="_on_card_discard"]
 [connection signal="discard" from="card2" to="." method="_on_card_discard"]
