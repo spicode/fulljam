@@ -1,0 +1,113 @@
+[gd_scene load_steps=13 format=3 uid="uid://dco87ivkwxecj"]
+
+[ext_resource type="Texture2D" uid="uid://ld8vfgy5mfen" path="res://fight.png" id="1_nsrqs"]
+[ext_resource type="Script" uid="uid://cmuv5ouoyduqm" path="res://birdChose.gd" id="1_vxoqu"]
+[ext_resource type="Texture2D" uid="uid://bybpmdo6ntlem" path="res://birds/chicken.png" id="2_yieug"]
+[ext_resource type="Texture2D" uid="uid://7ko34bqqtpvw" path="res://birds/owl.png" id="3_d4ktu"]
+[ext_resource type="Script" uid="uid://c161a7qude8rn" path="res://bird.gd" id="3_kixd3"]
+[ext_resource type="Texture2D" uid="uid://ca1d6710tbglt" path="res://birds/parrot.png" id="4_juouk"]
+[ext_resource type="Texture2D" uid="uid://cgvbvy7umii8v" path="res://birds/penguin.png" id="6_vxoqu"]
+[ext_resource type="Texture2D" uid="uid://ye3qw7604ss" path="res://birds/pigeon.png" id="7_ge5y0"]
+[ext_resource type="Texture2D" uid="uid://bbce4j0hfam7w" path="res://birds/red_winged_bird.png" id="8_sc6ou"]
+[ext_resource type="Texture2D" uid="uid://b6yklkycl8p4" path="res://birds/toucan.png" id="9_dbddb"]
+[ext_resource type="Texture2D" uid="uid://chyg0vrs0hklx" path="res://birds/crow.png" id="11_ge5y0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ge5y0"]
+font_size = 71
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("replaceBird")]
+script = ExtResource("1_vxoqu")
+replaceBird = NodePath("bird8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(544, 536)
+scale = Vector2(8.5, 8.5)
+texture = ExtResource("1_nsrqs")
+
+[node name="bird1" type="Sprite2D" parent="." node_paths=PackedStringArray("enemyBird")]
+position = Vector2(141, 24)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_yieug")
+region_enabled = true
+region_rect = Rect2(14.1, 43.745, 77.105, 67.01)
+script = ExtResource("3_kixd3")
+enemyBird = NodePath("../bird2")
+me = "chicken"
+
+[node name="bird2" type="Sprite2D" parent="." node_paths=PackedStringArray("enemyBird")]
+position = Vector2(182, 239)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_d4ktu")
+region_enabled = true
+region_rect = Rect2(16.684, 57.265, 54.677, 52.545)
+script = ExtResource("3_kixd3")
+enemyBird = NodePath("../bird1")
+me = "owl"
+
+[node name="bird3" type="Sprite2D" parent="." node_paths=PackedStringArray("enemyBird")]
+position = Vector2(62, 293)
+scale = Vector2(1.22, 1.22)
+texture = ExtResource("4_juouk")
+region_enabled = true
+region_rect = Rect2(14.1, 43.745, 77.105, 67.01)
+script = ExtResource("3_kixd3")
+enemyBird = NodePath("../bird4")
+me = "parrot"
+
+[node name="bird4" type="Sprite2D" parent="." node_paths=PackedStringArray("enemyBird")]
+position = Vector2(101, 482)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_vxoqu")
+region_enabled = true
+region_rect = Rect2(25.51, 43.745, 67.05, 67.01)
+script = ExtResource("3_kixd3")
+enemyBird = NodePath("../bird3")
+me = "pinguin"
+
+[node name="bird5" type="Sprite2D" parent="." node_paths=PackedStringArray("enemyBird")]
+position = Vector2(192, 540)
+scale = Vector2(1.405, 1.405)
+texture = ExtResource("7_ge5y0")
+region_enabled = true
+region_rect = Rect2(25.51, 43.745, 67.05, 67.01)
+script = ExtResource("3_kixd3")
+enemyBird = NodePath("../bird7")
+me = "pigon"
+
+[node name="bird6" type="Sprite2D" parent="." node_paths=PackedStringArray("enemyBird")]
+position = Vector2(79, 993)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_sc6ou")
+region_enabled = true
+region_rect = Rect2(19.4882, 76.7931, 46.9662, 44.8632)
+script = ExtResource("3_kixd3")
+enemyBird = NodePath("../bird8")
+me = "redWinged"
+
+[node name="bird7" type="Sprite2D" parent="." node_paths=PackedStringArray("enemyBird")]
+position = Vector2(82, 761)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_dbddb")
+region_enabled = true
+region_rect = Rect2(18.4367, 66.6288, 66.9443, 53.6256)
+script = ExtResource("3_kixd3")
+enemyBird = NodePath("../bird5")
+me = "toucan"
+
+[node name="bird8" type="Sprite2D" parent="." node_paths=PackedStringArray("enemyBird")]
+position = Vector2(174, 821)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("11_ge5y0")
+region_enabled = true
+region_rect = Rect2(17.5177, 51.9544, 71.5007, 59.8235)
+script = ExtResource("3_kixd3")
+enemyBird = NodePath("../bird6")
+me = "you"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 714.0
+offset_top = 52.0
+offset_right = 1501.0
+offset_bottom = 149.0
+text = "Chose a bird to replace"
+label_settings = SubResource("LabelSettings_ge5y0")

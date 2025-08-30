@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv2m4e4mkyd5h"]
+
+[ext_resource type="Texture2D" uid="uid://bobd245mki4da" path="res://birds/backforbird.png" id="1_j0gls"]
+[ext_resource type="FontFile" uid="uid://cldpw281x8vut" path="res://DeterminationSansWebRegular-369X.ttf" id="2_kcyfv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ycdy4"]
+font = ExtResource("2_kcyfv")
+font_size = 43
+
+[node name="Sprite2D" type="Sprite2D"]
+scale = Vector2(2.42, 2.42)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+show_behind_parent = true
+texture = ExtResource("1_j0gls")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -43.8017
+offset_top = 45.8678
+offset_right = 61.1983
+offset_bottom = 89.8678
+scale = Vector2(0.31, 0.31)
+text = "enemy:"
+label_settings = SubResource("LabelSettings_ycdy4")
