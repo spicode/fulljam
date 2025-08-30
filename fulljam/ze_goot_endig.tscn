@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bon43drx7odhb"]
+[gd_scene load_steps=3 format=3 uid="uid://bon43drx7odhb"]
 
 [ext_resource type="Texture2D" uid="uid://cnvxy7ekg4nd1" path="res://good lad.png" id="1_yep02"]
+[ext_resource type="AudioStream" uid="uid://i4lys8egx3w4" path="res://correct-choice-43861.mp3" id="2_mjv88"]
 
 [node name="Sprite2D" type="Sprite2D"]
 position = Vector2(962.25, 539.75)
 scale = Vector2(1.53118, 1.23714)
 texture = ExtResource("1_yep02")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_mjv88")
+autoplay = true
